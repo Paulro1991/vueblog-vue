@@ -2,11 +2,20 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Element from 'element-ui'
+import axios from 'axios'
 
+import "element-ui/lib/theme-chalk/index.css"
+
+// 导入axios全局配置
+import "./axios"
+
+Vue.use(Element)
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

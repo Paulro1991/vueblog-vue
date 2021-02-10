@@ -5,8 +5,36 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    token: '',
+    userInfo: '',
   },
   mutations: {
+    // set
+    SET_TOKEN: (state, token) => {
+      state.token = token;
+      localStorage.setItem("token", token);
+    },
+    SET_USERINFO: (state, userInfo) => {
+      state.userInfo = userInfo;
+      sessionStorage.setItem("userInfo", JSON.stringify(userInfo))
+    },
+    REMOVE_INFO: state => {
+      state.token = '';
+      state.userInfo = '';
+      localStorage.setItem("token", '');
+      sessionStorage.setItem("userInfo", '')
+    }
+  },
+  getters: {
+    // get
+    getUser: state => {
+      if (sessionStorage.getItem("userInfo") === null) {
+        return '';
+      } else {
+        return JSON.parse(sessionStorage.getItem("userInfo"));
+      }
+    }
+
   },
   actions: {
   },
