@@ -46,13 +46,13 @@ export default {
         _this.$router.push("/login")
       })
     }
-  // },
-  // created() {
-  //   if (this.$store.getters.getUser.username) {
-  //     this.user.username = this.$store.getters.getUser.username
-  //     this.user.avatar = this.$store.getters.getUser.avatar
-  //     this.hasLogin = true
-  //   }
+  },
+  created() {
+    if (this.$store.getters.getUser.username) {
+      this.user.username = this.$store.getters.getUser.username
+      this.user.avatar = this.$store.getters.getUser.avatar
+      this.hasLogin = true
+    }
   }
 }
 </script>
