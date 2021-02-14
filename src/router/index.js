@@ -27,19 +27,19 @@ const routes = [
   },
 
   {
-    path: '/blog/add',
+    path: '/blogs/add',
     name: 'BlogAdd',
     component: BlogEdit
   },
 
   {
-    path: '/blog/:blogId',
+    path: '/blogs/:blogId',
     name: 'BlogDetail',
     component: BlogDetail
   },
 
   {
-    path: '/blog/:blogId/edit',
+    path: '/blogs/:blogId/edit',
     name: 'BlogEdit',
     component: BlogEdit
   }
